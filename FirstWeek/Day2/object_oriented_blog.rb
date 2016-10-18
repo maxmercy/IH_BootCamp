@@ -1,5 +1,7 @@
 require 'colorize'
 
+require 'io/console'
+
 class Blog
     def initialize
         @container = []
@@ -49,7 +51,7 @@ class Blog
 
         puts "\n\n"
 
-        navigation
+        navigationbis
 
     end
 
@@ -58,23 +60,12 @@ class Blog
     def publish_articles
         n = @page
        @container[((n*3)-3)..(n*3-1)].each do |post|
-
              post.print
-
-        #     if post.class == Post
-        #     puts "\n #{post.title} \n************************"
-        # #    puts "#{post.date}"
-        #     puts "#{post.text} \n -------------------------"
-        #     else post.class == Sponsored_post
-        #         puts "*************************"
-        #     puts "******* #{post.title} *******\n*************************"
-        #     puts "** #{post.text} **\n*************************"
-        #     end
         end
     end
 
-    def prevnext
 
+    def prevnext
         if  @page == 1
             puts "          | next >"
         elsif @page == @number_page 
@@ -93,28 +84,89 @@ class Blog
         @page -= 1  
     end
 
-    def navigation
-        puts "choose prev / next / exit"
-        answer = gets.chomp
-        case answer
+    # def navigation
+    #    if  @page == 1
+    #         puts " choose next / exit >"
+    #     elsif @page == @number_page 
+    #         puts " choose prev / exit  "
+    #     else
+    #          puts "choose prev / next / exit"
+    #     end
+       
+    #     answer = gets.chomp
+    #     case answer
 
-        when "prev" 
-            prev_page
-            publish_front_page
+    #     when "prev" 
+    #         prev_page
+            
 
-        when "next"
+    #     when "next" 
+    #         next_page
+            
+
+    #     when "exit"
+    #         puts "bye bye"
+    #         abort
+    #     end
+
+    #     if @page < 1
+    #         @page = @number_page
+    #     elsif @page > @number_page
+    #         @page = 1 
+    #     end
+
+
+    #     publish_front_page
+
+    # end
+
+    def navigationbis
+       puts "navigate with left / rigth arrow\n escape key to exit"
+       # Reads keypresses from the user including 2 and 3 escape character sequences.
+       c = read_char
+       case c
+
+       when "\e[D"   #left arrow
+         prev_page  
+
+        when  "\e[C" # right arrow
             next_page
-            publish_front_page
+        when "\e"   # escape key
+            puts "Bye Bye!"
+            abort
 
-        when "exit"
-            puts "bye bye"
+        else "I do not understand."
         end
+
+
+        if @page < 1
+            @page = @number_page
+        elsif @page > @number_page
+            @page = 1 
+        end
+
+
+        publish_front_page
+
     end
 
 
 
+    def read_char
+      STDIN.echo = false
+      STDIN.raw!
 
+      input = STDIN.getc.chr
+      if input == "\e" then
+        input << STDIN.read_nonblock(3) rescue nil
+        input << STDIN.read_nonblock(2) rescue nil
+      end
+    ensure
+      STDIN.echo = true
+      STDIN.cooked!
 
+      return input
+    end
 end
 
 

@@ -61,23 +61,35 @@ homes2 = [
 # Exercise each
 def show_homes(homes_array)
   homes_array.each do |v|
-    puts "#{v.name} in #{v.city}\nPrice: $#{v.price} a night\nCapacity: #{v.capacity}\n"  
-  end
+    puts "#{v.name} in #{v.city} / Price: $#{v.price} a night / Capacity: #{v.capacity}"
+      end
     average_price = homes_array.reduce(0) { |total, n| total + n.price } / homes_array.size
-    puts "Average price of your selection is: #{average_price}"
+    puts "*****************************************************\n
+           Average price of your selection is: #{average_price}\n
+          *****************************************************"
 end
 
-puts "Press 1 to order by highest price or 2 to order by lowest price or 3 to order by capacity or 4 to select a city or 5 to enter a price"
+puts "Make a choice:\n
+1: to order by highest price \n
+2: to order by lowest price\n
+3: to order by capacity\n
+4: to select a city\n
+5: to enter a price"
 option = gets.chomp
 
-if option == "1"
+case option
+
+when "1"
+  puts "Order by highest price:\n*****************************************************"
   show_homes homes2.sort { |a, b| b.price <=> a.price }
-elsif option == "2"
-  show_homes homes2.sort { |a, b| a.price <=> b.price }
-elsif option == "3"
+
+when "2" 
+   show_homes homes2.sort { |a, b| a.price <=> b.price }
+
+when "3"
   show_homes homes2.sort { |a, b| a.capacity <=> b.capacity }
   
-elsif option == "4"
+when "4"
   puts "What city would you like?"
   chosen_city = gets.chomp
   choice = homes2.select { |hm| hm.city.downcase == chosen_city.downcase }
@@ -86,7 +98,8 @@ elsif option == "4"
     else
       puts "We don´t have any homes in that city yet"
     end
-elsif option == "5"
+
+when "5"
   puts "What price do you want?"
   user_price = gets.chomp
   v = homes2.find { |home| home.price == user_price.to_i}
@@ -95,6 +108,7 @@ elsif option == "5"
     else
       puts "We don´t have any homes at this price."
     end  
+
 else
   puts "Option not recognized"
 end

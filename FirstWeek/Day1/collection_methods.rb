@@ -37,7 +37,7 @@ homes = [
 # cities = homes.map do |hm|
 
 # Exercise map
-# prices_array = homes.map { |h| h.price }
+ prices_array = homes.map { |h| h.price }
 # total = 0
 # prices_array.each { |h| total += h }
 # puts total / prices_array.size

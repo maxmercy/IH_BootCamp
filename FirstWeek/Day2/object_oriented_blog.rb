@@ -1,12 +1,14 @@
-
+require 'colorize'
 
 class Blog
     def initialize
         @container = []
-        @page = 0
+        @page = 1
         @number_page = 0
     #    @new_post = new_post
     end
+
+    
 
     def add_post(new_post)
         @container << new_post
@@ -20,27 +22,35 @@ class Blog
         else
             @number_page = @container.length / 3 + 1
         end
-    end
-    
+    end 
 
     def publish_front_page
         calc_number_page
         @container.sort! { |x,y| y.date <=> x.date }
-        @page =  1
+       
 
         puts "////////  My Blog ///////\n\n"
 
-
         publish_articles
-
 
         puts "\n\n"
         i = 0
         while i < @number_page
             i += 1
-            print "     " + i.to_s            
+            if i == @page
+                print "     " + i.to_s.blue 
+            else 
+                print "     " + i.to_s
+            end
+
         end
+        puts "\n"
+        prevnext
+
         puts "\n\n"
+
+        navigation
+
     end
 
 
@@ -62,6 +72,47 @@ class Blog
         #     end
         end
     end
+
+    def prevnext
+
+        if  @page == 1
+            puts "          | next >"
+        elsif @page == @number_page 
+            puts "   < prev |       "
+        else
+             puts "   < prev | next >"
+         end
+    end
+
+    
+    def next_page
+        @page += 1
+    end
+
+    def prev_page
+        @page -= 1  
+    end
+
+    def navigation
+        puts "choose prev / next / exit"
+        answer = gets.chomp
+        case answer
+
+        when "prev" 
+            prev_page
+            publish_front_page
+
+        when "next"
+            next_page
+            publish_front_page
+
+        when "exit"
+            puts "bye bye"
+        end
+    end
+
+
+
 
 
 end
@@ -128,6 +179,5 @@ blog.add_post(ninepost)
 
 
 blog.publish_front_page
-
 
 

@@ -1,3 +1,5 @@
+
+
 class Blog
     def initialize
         @container = []
@@ -26,9 +28,10 @@ class Blog
         @container.sort! { |x,y| y.date <=> x.date }
         @page =  1
 
+        puts "////////  My Blog ///////\n\n"
+
+
         publish_articles
-
-
 
 
         puts "\n\n"
@@ -46,15 +49,17 @@ class Blog
         n = @page
        @container[((n*3)-3)..(n*3-1)].each do |post|
 
-            if post.class == Post
-            puts "\n #{post.title} \n************************"
-        #    puts "#{post.date}"
-            puts "#{post.text} \n -------------------------"
-            else post.class == Sponsored_post
-                puts "*************************"
-            puts "******* #{post.title} *******\n*************************"
-            puts "** #{post.text} **\n*************************"
-            end
+             post.print
+
+        #     if post.class == Post
+        #     puts "\n #{post.title} \n************************"
+        # #    puts "#{post.date}"
+        #     puts "#{post.text} \n -------------------------"
+        #     else post.class == Sponsored_post
+        #         puts "*************************"
+        #     puts "******* #{post.title} *******\n*************************"
+        #     puts "** #{post.text} **\n*************************"
+        #     end
         end
     end
 
@@ -70,11 +75,11 @@ class Post
      @text = text
    end
 
-# def print_post
-#     puts "\n #{post.title} \n************************"
-#         #    puts "#{post.date}"
-#     puts "#{post.text} \n -------------------------"   
-# end
+   def print
+        puts "\n  #{@title} \n-------------------------"
+        puts "#{@text} \n-------------------------"
+
+    end
 
 
 
@@ -87,6 +92,13 @@ class Sponsored_post
      @date = date
      @text = text
    end
+
+   def print
+        puts "*************************\n****  #{@title}  **** \n*************************"
+        puts "#{@text} \n*************************"
+
+    end
+
 
 end
 
@@ -116,5 +128,6 @@ blog.add_post(ninepost)
 
 
 blog.publish_front_page
+
 
 

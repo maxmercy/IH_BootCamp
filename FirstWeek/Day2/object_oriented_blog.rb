@@ -7,17 +7,14 @@ class Blog
         @container = []
         @page = 1
         @number_page = 0
-    #    @new_post = new_post
     end
 
-    
-
+    #Add a new post to the blog
     def add_post(new_post)
         @container << new_post
-
-    #    puts @container
     end
 
+    #Calculation of the number of pages to get 3 post / pages
     def calc_number_page
         if @container.length % 3 == 0
             @number_page = @container.length / 3
@@ -26,33 +23,31 @@ class Blog
         end
     end 
 
+    #Called methods to publish the blog
     def publish_front_page
         calc_number_page
         @container.sort! { |x,y| y.date <=> x.date }
        
-
         puts "////////  My Blog ///////\n\n"
 
-        publish_articles
+        publish_articles #methods that select the post
 
         puts "\n\n"
         i = 0
-        while i < @number_page
+        while i < @number_page  #print page number with hightlight current page
             i += 1
             if i == @page
                 print "     " + i.to_s.blue 
             else 
                 print "     " + i.to_s
             end
-
         end
         puts "\n"
-        prevnext
+
+        prevnext 
 
         puts "\n\n"
-
         navigationbis
-
     end
 
 
@@ -64,7 +59,7 @@ class Blog
         end
     end
 
-
+    #Print smartly prev / next down the front page
     def prevnext
         if  @page == 1
             puts "          | next >"
@@ -75,7 +70,8 @@ class Blog
          end
     end
 
-    
+   
+   ###### NAVIGATION ###### 
     def next_page
         @page += 1
     end
@@ -84,42 +80,7 @@ class Blog
         @page -= 1  
     end
 
-    # def navigation
-    #    if  @page == 1
-    #         puts " choose next / exit >"
-    #     elsif @page == @number_page 
-    #         puts " choose prev / exit  "
-    #     else
-    #          puts "choose prev / next / exit"
-    #     end
-       
-    #     answer = gets.chomp
-    #     case answer
-
-    #     when "prev" 
-    #         prev_page
-            
-
-    #     when "next" 
-    #         next_page
-            
-
-    #     when "exit"
-    #         puts "bye bye"
-    #         abort
-    #     end
-
-    #     if @page < 1
-    #         @page = @number_page
-    #     elsif @page > @number_page
-    #         @page = 1 
-    #     end
-
-
-    #     publish_front_page
-
-    # end
-
+    #respond to user input to the left and right arrow and esc
     def navigationbis
        puts "navigate with left / rigth arrow\n escape key to exit"
        # Reads keypresses from the user including 2 and 3 escape character sequences.
@@ -133,11 +94,9 @@ class Blog
             next_page
         when "\e"   # escape key
             puts "Bye Bye!"
-            abort
-
+            abort               #abort to exit the intrigate loop
         else "I do not understand."
         end
-
 
         if @page < 1
             @page = @number_page
@@ -145,13 +104,13 @@ class Blog
             @page = 1 
         end
 
-
-        publish_front_page
+        publish_front_page  #call back the front page 
+                            #it create two intrigate loop
 
     end
 
 
-
+    #method to use io/console and arrow key
     def read_char
       STDIN.echo = false
       STDIN.raw!
@@ -167,10 +126,12 @@ class Blog
 
       return input
     end
+
 end
 
-
-class Post
+######### Class for post and sponsorded post ########
+######### with print mthd for display post   ########
+class Post  
   attr_accessor  :title, :date, :text
    def initialize(title, date, text)
      @title = title
@@ -181,12 +142,9 @@ class Post
    def print
         puts "\n  #{@title} \n-------------------------"
         puts "#{@text} \n-------------------------"
-
     end
-
-
-
 end
+
 
 class Sponsored_post 
        attr_accessor  :title, :date, :text
@@ -199,10 +157,7 @@ class Sponsored_post
    def print
         puts "*************************\n****  #{@title}  **** \n*************************".red
         puts "#{@text} \n*************************".red
-
     end
-
-
 end
 
 

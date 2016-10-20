@@ -1,18 +1,50 @@
 require "imdb"
-
+require"pry"
 module CallImdb
 	def getmovie(movie)
 	@all_movies = Imdb::Search.new(movie)
 	@movie_info = @all_movies.movies[0]
 
 		#i = Imdb::Search.new("Star Trek")
+	
 	end	
+end
 
+module Histogram
+	def print_histogram
+        10.downto(0) do |num|
+            @movies_list_rated.each do |movie|
+                print "|"
+                if num <= movie[1].to_i
+                    print "#"
+                else
+                    print " "
+                end
+            end
+            print "|"
+            puts ""
+        end
+
+binding.pry
+        i= @movies_list_rated
+        i.times do
+        	print "|"
+        	print a
+        	a +=1
+        	print "|"
+        end
+
+ 	end
+
+
+
+     puts @movies_list_rated   
 end
 
 class MovieFront
 	attr_accessor :film
 	include CallImdb
+	include Histogram
 	def initialize(list)
 		@movie_and_rates =[]
 		@mylist = list
@@ -28,23 +60,14 @@ class MovieFront
 		end
 	end
 	
+	def histo_film
+		print_histogram
 
-	def print_rating
-        10.downto(0) do |num|
-            @movies_list_rated.each do |movie|
-                print "|"
-                if num <= movie[1].to_i
-                    print "#"
-                else
-                    print " "
-                end
-            end
-            print "|"
-            puts ""
-        end
 
-        puts @movies_list_rated
-    end    
+	end
+
+
+ 
 end
 
 class MovieList
@@ -69,8 +92,8 @@ mylist.create_list
 myfront = MovieFront.new(mylist)
 myfront.get_info
 
-myfront.print_rating
+myfront.histo_film
 
 
-# require"pry"
-# binding.pry
+# 
+# 

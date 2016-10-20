@@ -36,7 +36,10 @@ module ActionInRoom
 			puts @actualroom.description_of_room
 	end
 
+	def choice 
 
+	end
+	
 end
 
 
@@ -53,7 +56,7 @@ class Game
 
 			give_description
 
-
+			choice
 
 			movement
 

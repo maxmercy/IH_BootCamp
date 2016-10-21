@@ -1,0 +1,5 @@
+Fruits_name    Spring Summer Autumn Winter
+apples        10    10    20    10
+oranges        5     2     5     5
+grapes        15    15    15    15
+banana        20    20    20    21

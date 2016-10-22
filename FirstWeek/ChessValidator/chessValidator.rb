@@ -3,16 +3,18 @@ require_relative "pieces"
 
 
 class Cheeseboard
-	attr_accessor :board 
+	attr_accessor :board, :piece
 	def initialize
 		@board = []
 		@coordinate = []
+		@piece = piece
 	end
 
 	def create_board
-		8.times do @board << [nil,nil,nil,nil,nil,nil,nil,nil]
+		8.times do @board << [nil,nil,nil,nil,nil,nil,nil,nil]		
 		end
 	end
+
 
 	#### convert position bord in array ie: a1 -> [0,7] !!! coordinatearray up/down!!!
 	def convert_position_to_array(position)
@@ -41,15 +43,15 @@ class Cheeseboard
 				end
 
 				if @board[i][y] == nil 
-					print "#{@board[i][y]} [_]"
+					print "#{@board[i][y]} --"
 				else 
-					print  " #{@board[i][y]} "
+					print  " #{@board[i][y].piecename}"
 				end
 
 			end
 			puts "\n"
 		end	
-		puts "   a   b   c   d   e   f   g   h"
+		puts "  a  b  c  d  e  f  g  h"
 		puts "\n\n\n\n"
 	end
 
@@ -59,10 +61,15 @@ class Cheeseboard
 		x = position_grille[0]
 		y = position_grille[1]
 		@board[x][y] = piece
+		@coordinate = [x,y]
 	end
 
 
-	#check the position status
+
+
+
+
+	#check the position status return true if something
 	def position_status(position)
 
 		if position.is_a? String
@@ -79,21 +86,30 @@ class Cheeseboard
 			false
 			
 		else
-			#puts "At the position #{position}, there is a #{@board[x][y]}"
+			puts "At the position #{position}, there is a #{@board[x][y].piecename}"
 
 			true
 		end
 	end
 
 
+	def checkmove(origin,destination)
 
-	# def checkmove(piece,origin,destination)
-	# 	origin_array = convert_position_to_array(origin)
-	# 	desctination_array = convert_position_to_array(destination)
+		
+		p origin
+		p origin_arr = convert_position_to_array(origin)
+		p destination
+		p destination_arr= convert_position_to_array(destination)
 
-	# 	#piece.valid_move(@board, origin_array, desctination_array)
+		@piece =  @board[origin_arr[0]][origin_arr[1]].piecename
 
-	# end
+		#@piece.valid_move(@myboard,"a1","a6")
+		binding.pry
+
+
+	end
+
+
 
 end
 
@@ -104,32 +120,24 @@ mycheeseboard = Cheeseboard.new
 
 mycheeseboard.create_board
 
-mycheeseboard.add_piece(:wQ, "a1")
-mycheeseboard.add_piece(:wQ, "e1")
-mycheeseboard.add_piece(:wQ, "a5")
-mycheeseboard.add_piece(:bQ, "e5")
-mycheeseboard.add_piece(:bQ, "c8")
+wR = Rock.new("wR")
+bR = Rock.new("bR")
+bQ = Queen.new("bQ")
+
+mycheeseboard.add_piece( wR, "a1")
+mycheeseboard.add_piece( wR, "d1")
+mycheeseboard.add_piece( bQ, "a5")
 
 mycheeseboard.print_board
 
-# mycheeseboard.position_status("a8")
-# mycheeseboard.position_status("c4")
+mycheeseboard.position_status("a1")
 
-# mycheeseboard.checkmove(wR,"a1","a4")
-# mycheeseboard.checkmove(wR,"a1","e1")
-# mycheeseboard.checkmove(wR,"a1","e4")
+wR.valid_move(mycheeseboard,"a1","a6")
+wR.valid_move(mycheeseboard,"a1","d6")
+bQ.valid_move(mycheeseboard,"a5","e1")
 
-wR = Rock.new
-bB = Queen.new
-wQ = Queen.new
+mycheeseboard.checkmove("a1","a6")
 
-wR.valid_move(mycheeseboard,"a1","a4")
-
-wQ.valid_move(mycheeseboard,"a1","d4")
-wQ.valid_move(mycheeseboard,"d4","a1")
-wQ.valid_move(mycheeseboard,"a1","f1")
-wQ.valid_move(mycheeseboard,"a1","e5")
-wQ.valid_move(mycheeseboard,"a5","d2")
 
 
 

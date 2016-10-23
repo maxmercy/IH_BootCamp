@@ -63,12 +63,10 @@ class Piece
 			true
 		end
 	end
-
 	#return true if empty between the two position
 	def path_validator_horizontal_vertical(the_board,origin_arr,destination_arr)
 		validity = true 
 		#puts "Starting Position #{origin_arr}, final position #{destination_arr}"
-
 
 		if origin_arr[0] == destination_arr[0]
 			#puts "Horitzontal direction"	
@@ -109,7 +107,6 @@ class Piece
 			 		i -= 1
 			 	end		
 			end
-
 		end
 		validity
 	end
@@ -117,8 +114,7 @@ class Piece
 	def path_validator_diagonal(the_board,origin_arr,destination_arr)
 		validity = false
 		diag_x = origin_arr[0] + 1  
-		diag_y = destination_arr[1] + 1
-		
+		diag_y = destination_arr[1] + 1		
 		i = j = 1	
 		if origin_arr[0] > destination_arr[0]
 			diag_x = diag_x - 2
@@ -127,8 +123,7 @@ class Piece
 		if origin_arr[1] > destination_arr[1]
 			diag_y = diag_y - 2
 			j = (-1)
-		end
-		
+		end		
 		until diag_x == (destination_arr[0])  
 			if the_board.board[diag_x][diag_y] != nil					
 				#puts "Not VALID, A piece at the position [[#{origin_arr[0]}],#{[i]}] was FOUND."		 
@@ -140,10 +135,21 @@ class Piece
 			end
 			diag_x += i
 			diag_y += j
+		end	
+		
+		if the_board.board[origin_arr[0]][origin_arr[1]].piecename == ("wK" || "bK")
+			if  (origin_arr[0] - destination_arr[0]) > 1 || (origin_arr[0] - destination_arr[0]) < -1
+				validity = false
+			end
 		end
+
+
+
 		
 		validity
 	end
+
+
 
 	def valid_move(the_board,origin_arr,destination_arr)
 		puts "\nYou want to move from #{origin_arr} to #{destination_arr}"
@@ -151,35 +157,23 @@ class Piece
 		origin_arr = the_board.convert_position_to_array(origin_arr)
 		destination_arr = the_board.convert_position_to_array(destination_arr)
 		end
-		
-
 		piece_at_destination = the_board.board[destination_arr[0]][destination_arr[1]]
 		piece_at_origin = the_board.board[origin_arr[0]][origin_arr[1]]
-
 		checker = true
 		case 
-
 		when check_direction(origin_arr,destination_arr) == false
 			checker = false
-			
-
 		when (check_if_destination_empty(the_board,destination_arr) == true)  && (color_check(piece_at_origin,piece_at_destination) == true )
-			checker = false
-			
-
+			checker = false			
 		when path_validator(the_board,origin_arr,destination_arr) == false
-			checker = false
-			
+			checker = false			
 		end
-
 		if checker == true 
 			puts "VALID MOUVEMENT"  
 		else 
 			puts "INVALID MOUVEMENT"
 		end
 	end
-
-
 end
 
 
@@ -226,6 +220,51 @@ class Queen < Piece
 		end
 		validity
 	end
+end
+
+class Beeshop < Piece
+	attr_reader :color,:piecename
+	def initialize(name)
+		@color
+		@piecename = name
+	end
+
+	#check if movement valid (horizontal / vertical Or Diagonal)
+	def check_direction(origin_arr,destination_arr)
+		diagonal_direction(origin_arr,destination_arr)
+	end
+
+
+	#check the case between
+	#	check the case between
+	def path_validator(the_board,origin_arr,destination_arr)		
+		path_validator_diagonal(the_board,origin_arr,destination_arr)
+	end
 
 end
 
+class King < Piece
+	attr_reader :color,:piecename
+	def initialize(name)
+		@color
+		@piecename = name
+	end
+
+	#check if movement valid (horizontal / vertical Or Diagonal)
+	def check_direction(origin_arr,destination_arr)
+		 horizontal_direction(origin_arr,destination_arr) || diagonal_direction(origin_arr,destination_arr)
+	end
+
+
+	#check the case between
+	#	check the case between
+	def path_validator(the_board,origin_arr,destination_arr)		
+		if horizontal_direction(origin_arr,destination_arr)
+			validity = path_validator_horizontal_vertical(the_board,origin_arr,destination_arr)
+		elsif diagonal_direction(origin_arr,destination_arr)	
+			validity = path_validator_diagonal(the_board,origin_arr,destination_arr)
+		end
+		validity
+	end
+
+end

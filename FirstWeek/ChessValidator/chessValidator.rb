@@ -104,7 +104,7 @@ class Cheeseboard
 		@piece =  @board[origin_arr[0]][origin_arr[1]].piecename
 
 		#@piece.valid_move(@myboard,"a1","a6")
-		binding.pry
+
 
 
 	end
@@ -122,23 +122,41 @@ mycheeseboard.create_board
 
 wR = Rock.new("wR")
 bR = Rock.new("bR")
+wQ = Queen.new("wQ")
 bQ = Queen.new("bQ")
+wB = Beeshop.new("wB")
+bB = Beeshop.new("bB")
+wK = Beeshop.new("wK")
+bK = Beeshop.new("bK")
 
 mycheeseboard.add_piece( wR, "a1")
 mycheeseboard.add_piece( wR, "d1")
-mycheeseboard.add_piece( bQ, "a5")
+mycheeseboard.add_piece( bQ, "b4")
+mycheeseboard.add_piece( wB, "c1")
+mycheeseboard.add_piece( wB, "f1")
+mycheeseboard.add_piece( wB, "c3")
+mycheeseboard.add_piece( wK, "c3")
 
 mycheeseboard.print_board
 
-mycheeseboard.position_status("a1")
+# mycheeseboard.position_status("a1")
 
-wR.valid_move(mycheeseboard,"a1","a6")
-wR.valid_move(mycheeseboard,"a1","d6")
-bQ.valid_move(mycheeseboard,"a5","e1")
+# wR.valid_move(mycheeseboard,"a1","a5")
+# wR.valid_move(mycheeseboard,"a1","d6")
+# bQ.valid_move(mycheeseboard,"a5","e1")
 
-mycheeseboard.checkmove("a1","a6")
+# wB.valid_move(mycheeseboard,"c1","b1")
+# wB.valid_move(mycheeseboard,"c1","f4")
+# wB.valid_move(mycheeseboard,"c3","b2")
+# wB.valid_move(mycheeseboard,"c3","a5")
 
+wK.valid_move(mycheeseboard, "c3","d3")
+wK.valid_move(mycheeseboard, "c3","e4")
+wK.valid_move(mycheeseboard, "c3","b2")
+wK.valid_move(mycheeseboard, "c3","b4")
 
+wK.valid_move(mycheeseboard, "c3","e3")
+wK.valid_move(mycheeseboard, "c3","c6")
 
 
 

@@ -21,11 +21,11 @@ end
 my_inventory = {
   "Ford" => ["Fiesta", "Mustang"],
   "Renauld" => ["Twingo", "Laguna"]
-}
+  }
+
 
 car_dealer = CarDealer.new(my_inventory)
 #car_dealer.cars("Ford")  # ["Fiesta", "Mustang"]
-
 # binding.pry
 
 car_dealer.print_inventory

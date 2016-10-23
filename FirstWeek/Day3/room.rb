@@ -1,5 +1,3 @@
-array_room = [room0, room1, room2, room3, room4, room5]
-
 
 room0 = Room.new(
 	{:N => 1 , :E => 2, :W => 3}, 

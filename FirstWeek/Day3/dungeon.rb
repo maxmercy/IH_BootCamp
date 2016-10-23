@@ -14,17 +14,36 @@ module MovementCommand
  				@actualroom = @allroom[new_room.values[0]]
  			elsif direction == "N" || direction == "S" || direction == "E" || direction == "W"
  				puts "You run into the Wall!! Be Carefull!"
- 				movement				
- 			else 
- 				puts "I do not understand"
+ 				movement
+ 			elsif direction == "Q"	
+ 				quit
+			else 
+ 				puts "I do not understand. To exit press (Q)"
  				movement
  			end
-
- 			puts direction
- 			
-			action
-		
+ 			puts direction	
+			action	
 	end
+
+
+	def quit
+		puts "You want to leave? Y , N"
+		ans = gets.chomp.upcase
+		if ans == "N"
+			puts "Great, let's go back to the dungeon."
+			movement
+		else 
+			puts "No I mean realy? Y, N "
+			if gets.chomp.upcase == "N"
+				puts "Great, let's go back to the dungeon."
+				movement
+			else 
+				puts "Ok. I'm so sad. Ciao."
+				exit	
+			end
+		end
+	end
+
 end
 
 
@@ -33,11 +52,11 @@ module ActionInRoom
 	def give_description
 			system "clear"
 			puts "\n\n\n"
-			puts @actualroom.description_of_room
+			puts @actualroom.description_room
 	end
 
 	def choice 
-
+			puts "No ACTION!!! It is a boring game. Just choose a direction."
 	end
 	
 end
@@ -65,67 +84,63 @@ class Game
 end
 
 class Room
-	attr_accessor :doors, :name, :treasure_box, :description_of_room
-	def initialize(doors, name, treasure_box, description_of_room)
+	attr_accessor :doors, :description_of_room
+	def initialize(doors, description_of_room)
 		@doors = doors
-		@name = name
-		@treasure_box = treasure_box
 		@description_of_room = description_of_room
 
 	end
 
-
-
-	
-
-	def description
-		puts @description_of_room
+	def description_room
+		puts @description_of_room[0]
 	end
 end
 
 
+
+
 room0 = Room.new(
 	{:N => 1 , :E => 2, :W => 3}, 
-	"Main Room", 
-	["Origin Room"], 
-	"This is the starting room."
+	["This is the starting room."]
 	)
 
 
 room1 = Room.new(
 	{:S => 0}, 
-	"chevalry room", 
-	["sword", "You found the sword"], 
-	"You're in a light room, check what is in the box or go."
+	["You're in a sanctuary, a knight stone tomb are seatle in the middle of the room. Century's of dust cover the stone.
+	 You examine the vault and see that the lid balances sligthly.",
+	 "sword",
+	 "You found the sword"]
 	)
 
 room2 = Room.new(
 	{:W => 0 , :N => 4}, 
-	"dark room", 
-	["deadly spider", "You are bitted by deadly spider"],
-	 "You're in a dark room, check what is in the box or go."
+	["You're in a dark room. There is piece of squeleton all around the ground.A rayligth from a small opening in the ceilling bring your eyes on something.
+A red ring boxes with golden border stand on a stone pedestals.",
+	 "deadly spider",
+	 "You are bitted by tiny black spider, tiny but deadly. You scream. You are dead."]
 	 )
 
 room3 = Room.new(
 	{:E => 0}, 
-	"flask room", 
-	["glowing flask", "You found a glowing flask"], 
-	"You're in a dark room, check what is in the box or go."
+	["You're in a dark room, There is a antic wood chest",
+	 "A pair of leather boot. Yours are quite old and smelly.",
+	 "deadly spider",
+	 "You are bitted by tiny black spider, tiny but deadly. You scream. You are dead."]
 	)
 
 room4 = Room.new(
 	{:S => 2, :E => 5},
-	 "treasure room", 
-	 ["glowing flask", "You found a glowing flask"], 
-	 "You're in a room with Armoiries painted all over the wall,\n check what is in the box or go."
+	 ["You're in a room with Armoiries painted all over the wall,\n There is a clothes chest",
+	 "a Glowing flask",
+	 "You are feeling strong! Nobody can defeat you! On the flask you can read: Invicibility guaranteed*! (*execpted for deadly spider)"] 
 	 )
 
 room5 = Room.new(
 	{:W => 4}, 
-	"Outside", 
-	["Release a Captif Agressive Dwarf", "You are attacked"], 
-	"A brigth ligth blinded you. Fresh air reach you. You're Free!! You're outside!!! "
+	["A brigth ligth blinded you. Fresh air reach you. You're Free!! You're outside!!! "]
 	)
+
 
 
 array_room = [room0, room1, room2, room3, room4, room5]
@@ -138,6 +153,3 @@ mydungeon.action
 
 
 	#binding.pry
-
-
-

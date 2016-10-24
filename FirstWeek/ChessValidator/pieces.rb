@@ -1,8 +1,9 @@
 class Piece
-	attr_reader :color, :coordinate
-	def initialize
+	attr_reader :color, :coordinate, :@board
+	def initialize(name,theboard)
 		@color
 		@coordinate = []
+		@board = theboard
 	end
 
 	#return @color = white or black
@@ -56,13 +57,25 @@ class Piece
 
 
 	#check if destination empty, return true if something
-	def check_if_destination_empty(the_board,destination_arr)
+	def check_if_destination_empty(destination_arr)
 		if the_board.position_status(destination_arr) == false
 			false
 		else 
 			true
 		end
 	end
+
+
+
+
+
+
+
+
+
+
+
+
 	#return true if empty between the two position
 	def path_validator_horizontal_vertical(the_board,origin_arr,destination_arr)
 		validity = true 

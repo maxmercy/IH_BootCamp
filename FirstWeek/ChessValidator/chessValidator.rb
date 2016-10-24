@@ -7,7 +7,7 @@ require_relative "pieces"
 class Cheeseboard
 	attr_accessor :board, :piece
 	def initialize
-		@board = []
+ 		@board = []
 		@coordinate = []
 		@piece = piece
 
@@ -16,7 +16,8 @@ class Cheeseboard
 	def create_board
 		8.times do @board << [nil,nil,nil,nil,nil,nil,nil,nil]		
 		end
-		wK = Beeshop.new(:wK)
+
+
 	end
 
 
@@ -105,7 +106,8 @@ class Cheeseboard
 		p destination
 		p destination_arr= convert_position_to_array(destination)
 
-		@piece =  @board[origin_arr[0]][origin_arr[1]].piecename
+		p  @board[origin_arr[0]][origin_arr[1]].path_validator(sel,fdestination_arr)
+
 
 		#@piece.valid_move(@myboard,"a1","a6")
 	    p @piece.class
@@ -117,6 +119,20 @@ class Cheeseboard
 
 end
 
+class Printer	
+
+
+	self.def print(test)
+		puts test
+	end
+
+
+
+end
+
+Printer.print("toto")
+
+
 
 
 
@@ -124,22 +140,22 @@ mycheeseboard = Cheeseboard.new
 
 mycheeseboard.create_board
 
-wR = Rock.new("wR")
-bR = Rock.new("bR")
-wQ = Queen.new("wQ")
-bQ = Queen.new("bQ")
-wB = Beeshop.new("wB")
-bB = Beeshop.new("bB")
-wK = Beeshop.new("wK")
-bK = Beeshop.new("bK")
+wR = Rock.new("wR",mycheeseboard)
+# bR = Rock.new("bR")
+# wQ = Queen.new("wQ")
+# bQ = Queen.new("bQ")
+# wB = Beeshop.new("wB")
+# bB = Beeshop.new("bB")
+# wK = Beeshop.new("wK")
+# bK = Beeshop.new("bK")
 
 mycheeseboard.add_piece( wR, "a1")
-mycheeseboard.add_piece( wR, "d1")
-mycheeseboard.add_piece( bQ, "b4")
-mycheeseboard.add_piece( wB, "c1")
-mycheeseboard.add_piece( wB, "f1")
-mycheeseboard.add_piece( wB, "c3")
-mycheeseboard.add_piece( wK, "c3")
+# mycheeseboard.add_piece( wR, "d1")
+# mycheeseboard.add_piece( bQ, "b4")
+# mycheeseboard.add_piece( wB, "c1")
+# mycheeseboard.add_piece( wB, "f1")
+# mycheeseboard.add_piece( wB, "c3")
+# mycheeseboard.add_piece( wK, "c3")
 
 mycheeseboard.print_board
 
@@ -154,7 +170,7 @@ mycheeseboard.print_board
 # wB.valid_move(mycheeseboard,"c3","b2")
 # wB.valid_move(mycheeseboard,"c3","a5")
 
-wK.valid_move(mycheeseboard, "c3","d3")
+wR.valid_move(mycheeseboard, "a1","a4")
 # wK.valid_move(mycheeseboard, "c3","e4")
 # wK.valid_move(mycheeseboard, "c3","b2")
 # wK.valid_move(mycheeseboard, "c3","b4")
@@ -163,7 +179,7 @@ wK.valid_move(mycheeseboard, "c3","d3")
 # wK.valid_move(mycheeseboard, "c3","c6")
 
 
-mycheeseboard.checkmove("c3","d3")
+#mycheeseboard.checkmove("c3","d3")
 
 
 

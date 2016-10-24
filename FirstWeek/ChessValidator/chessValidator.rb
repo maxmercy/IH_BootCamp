@@ -2,17 +2,21 @@ require "pry"
 require_relative "pieces"
 
 
+
+
 class Cheeseboard
 	attr_accessor :board, :piece
 	def initialize
 		@board = []
 		@coordinate = []
 		@piece = piece
+
 	end
 
 	def create_board
 		8.times do @board << [nil,nil,nil,nil,nil,nil,nil,nil]		
 		end
+		wK = Beeshop.new(:wK)
 	end
 
 
@@ -104,10 +108,10 @@ class Cheeseboard
 		@piece =  @board[origin_arr[0]][origin_arr[1]].piecename
 
 		#@piece.valid_move(@myboard,"a1","a6")
+	    p @piece.class
+	  
 
-
-
-	end
+  	end
 
 
 
@@ -151,14 +155,15 @@ mycheeseboard.print_board
 # wB.valid_move(mycheeseboard,"c3","a5")
 
 wK.valid_move(mycheeseboard, "c3","d3")
-wK.valid_move(mycheeseboard, "c3","e4")
-wK.valid_move(mycheeseboard, "c3","b2")
-wK.valid_move(mycheeseboard, "c3","b4")
+# wK.valid_move(mycheeseboard, "c3","e4")
+# wK.valid_move(mycheeseboard, "c3","b2")
+# wK.valid_move(mycheeseboard, "c3","b4")
 
-wK.valid_move(mycheeseboard, "c3","e3")
-wK.valid_move(mycheeseboard, "c3","c6")
+# wK.valid_move(mycheeseboard, "c3","e3")
+# wK.valid_move(mycheeseboard, "c3","c6")
 
 
+mycheeseboard.checkmove("c3","d3")
 
 
 

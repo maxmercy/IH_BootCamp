@@ -3,6 +3,9 @@ require 'pry'
 
  #Trolley is a hash with :item as key => value [quantity,price,discount]
 
+
+
+
 module Apple
   def apple_cost
     numb_apple = @trolley.values_at(:apple)[0][0]

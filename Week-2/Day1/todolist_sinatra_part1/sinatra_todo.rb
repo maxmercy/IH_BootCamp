@@ -52,7 +52,7 @@ end
 
 class ToDoList
     # include Storage
-
+    include StorageAction
     attr_reader :tasks, :user
     def initialize(user)
         @tasks = []
@@ -87,6 +87,16 @@ class ToDoList
 
     end    
 
+
+
+
+
+end
+
+
+
+module StorageAction
+
     def save
         @todo_store.transaction do 
             @todo_store[@user] = @tasks
@@ -106,8 +116,8 @@ class ToDoList
     end
 
 
-
 end
+
 
 
 

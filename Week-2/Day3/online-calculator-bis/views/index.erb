@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Calculator</title>
+</head>
+<body>
+
+<h1> Calculator </h1>
+<form action="/result" method="POST">
+	<input type="number" name="number_1" id="number_1" 
+	<% if @return_save %>
+		value=<%= @return_save %>
+		<% else %>
+		placeholder="1st number"
+		<% end %>
+
+
+
+	>
+	<input type="number" name="number_2" id="number_2" placeholder="2nd Number">
+
+	<button type="submit" name="operation" value="addition">Add</button>
+	<button type="submit" name="operation" value="multiplication">Multiply</button>
+	<button type="submit" name="operation" value="substraction">Substract</button>
+	<button type="submit" name="operation" value="division">Divide</button>
+</form>
+
+
+ 
+<form action="/yes" method="GET">
+	<button type="submit" >Get saved value</button>
+</form>
+
+<% if  @buton_memo == true  %>
+TOTO EST A LA PLAGE
+<% end %>
+
+
+
+</body>
+</html>

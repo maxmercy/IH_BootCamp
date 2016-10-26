@@ -1,0 +1,57 @@
+body {
+	background-color: cadetblue
+
+}
+
+
+
+
+img {
+	float: left;
+}
+
+
+	
+table {
+  width: 400px;
+  margin: auto;	
+}
+
+ul {
+	  width: 300px;
+  margin: auto;	
+  text-align: left;
+}
+ol {
+	  width: 300px;
+  margin: auto;	
+  text-align: left;
+}
+
+
+}
+nav {
+	background-color:   rgb(5,120,90) ;
+}
+
+article {
+  background-color: silver;
+}
+
+
+
+
+h1 {
+  font-size: 40px;
+}
+
+.niceParagraph {
+	background-color: chocolate;	
+	font-family: "monoton" ;
+}
+
+.postAuthor {
+  font-size: 20px;
+}
+
+

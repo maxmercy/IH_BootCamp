@@ -1,0 +1,17 @@
+<h1>My first sinatra<h1>
+<p>
+	<b>Author:<b>
+	<%= @name%>
+</p>
+
+
+Today date is <%= Date.today %>
+
+<% if Date.today.tuesday? %>
+	<p>Today is Tuesday</p>
+<%else%>
+	<p>Today is not Tuesday</p>
+<% end %>
+
+
+<img src=/img/kitten.png >

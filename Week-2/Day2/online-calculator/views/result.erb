@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Calculator</title>
+</head>
+<body>
+
+<h1> Result </h1>
+
+<p> The result of your operation is <%=@result%>.
+Do you want to store the result for reuse?</p>
+
+
+<form action="/store_result" method="POST">
+	<button type="submit" name="operation" value="<%=@result%>">Saving</button>
+	<button type="submit" name="operation" value="<%=nil%>">Not Saving</button>
+</form>
+
+
+</body>
+</html>

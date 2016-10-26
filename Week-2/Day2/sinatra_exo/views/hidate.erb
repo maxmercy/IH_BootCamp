@@ -1,0 +1,25 @@
+<h1>Awsome Date Page & Chocolate Cake recipy<h1>
+<p>
+	Today date is <%= Date.today %>
+</p>
+<b>
+The hour is  <%= @time.strftime("%H") %> and the minutes are <%= @time.strftime("%M") %>
+<br>
+So it's <em><%= @time.strftime("%H:%M:%S") %></em> and we are a <%= @time.strftime("%A") %> of  <%= @time.strftime("%B") %>
+<br>
+<% if Date.today.tuesday? %>
+	Today is Tuesday
+<%else%>
+	Today is not Tuesday
+<% end %>
+</p>
+
+<p>The ingredient for Max Cake:</p>
+
+<ul> 
+	<% @ingredients.each do |ing| %>
+		<li> <%= ing %> </li>
+		<% end %>
+</ul>
+	
+

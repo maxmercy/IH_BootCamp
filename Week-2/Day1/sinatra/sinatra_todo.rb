@@ -94,15 +94,6 @@ class ToDoList
     end
 
 
-
-    # def open
-    #     if File.exist?( @storage_file)
-    #         YAML.load_file( @storage_file) 
-    #     else
-    #         puts "file not exits" 
-    #     end
-    # end
-
     def load_tasks
         if File.exist?( @storage_file)
             YAML.load_file( @storage_file) 
@@ -120,31 +111,17 @@ end
 
 
 
-# module Storage
-#     # TASK_FILE = "./public/task.yml"
-
-#     def save 
-#         @todo_store.transaction do 
-#             @todo_store[@user] = @tasks
-#         end
-#     end   
-
-
-
-# end
-
-
-# todo_list = ToDoList.new("Josh")
-# task = Task.new("Walk the dog")
-# task2 = Task.new("Buy the milk")
-# task3 = Task.new("Make my todo list into a web app")
-# todo_list.add_task(task)
-# todo_list.add_task(task2)
-# todo_list.add_task(task3)
+todo_list = ToDoList.new("Josh")
+task = Task.new("Walk the dog")
+task2 = Task.new("Buy the milk")
+task3 = Task.new("Make my todo list into a web app")
+todo_list.add_task(task)
+todo_list.add_task(task2)
+todo_list.add_task(task3)
 
 
 
-# todo_list.save
+todo_list.save
 
 
 todo_list = ToDoList.new("Josh")
@@ -155,3 +132,5 @@ puts todo_list.tasks.length
 
 task4 = Task.new("Buy the milk")
 todo_list.save
+
+

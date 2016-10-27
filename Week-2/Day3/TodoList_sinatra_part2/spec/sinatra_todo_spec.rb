@@ -1,64 +1,65 @@
-require "./sinatra_todo"
+require "./lib/sinatra_todo"
+require "./lib/Task"
 
 
-describe Task do 
+describe Task do
 
 	let(:mytask) { Task.new("Walk the dog")}
 
 	 # before(:each)  { @mytask = Task.new }
 
 
-	 describe "#id" do 
+	 describe "#id" do
 	 	it "asking id should return a ID"  do
 	 		expect(mytask.id).to eq(1)
 	 	end
 	 end
 
-	 describe "content" do 
+	 describe "content" do
 	 	it "asking content should return string Walk the dog "  do
 	 		expect(mytask.content).to eq("Walk the dog")
 	 	end
 	 end
 
-	 describe "#id" do 
+	 describe "#id" do
 	 	it "asking id should return a ID"  do
 	 		expect(mytask.id).to eq(3)
 	 	end
 	 end
 
-	 describe "complete?" do 
+	 describe "complete?" do
 	 	it "asking if task completed, by default false" do
 	 		expect(mytask.complete?).to eq(false)
 	 	end
 	 end
 
-	 describe "completed?" do 
+	 describe "completed?" do
 	 	it "make task completed, get true" do
 	 		mytask.complete!
 	 		expect(mytask.complete?).to eq(true)
 	 	end
 	 end
 
-	 describe "complete!" do 
+	 describe "complete!" do
 	 	it "make task un_completed, get false" do
 	 		mytask.complete!
 	 		expect(mytask.make_incomplete!).to eq(false)
 	 	end
 	 end
 
-	 describe "creation_date" do 
+	 describe "creation_date" do
 	 	it "test class of created at to be egual to a time" do
 	 		expect(mytask.creation_date.class).to eq(DateTime)
 	 	end
-	 end	
+	 end
 
 	 describe "created_at" do
 	 	it "check if creation date correpond to date creation (round ms)" do
 	 		expect(mytask.created_at.iso8601).to eq(DateTime.now.iso8601)
 	 	end
-	 end		
+	 end
 
-	 describe "centent" do 
+	 describe "centent" do
 	 	it "update content from walk dog to buy milk" do
 	 		mytask.update_content!("Buy milk")
 	 		expect(mytask.content).to eq("Buy milk")
@@ -66,7 +67,7 @@ describe Task do
 	 end
 
 
-	 describe "update_date" do 
+	 describe "update_date" do
 	 	it "Update Content also Update date" do
 	 		mytask.update_content!("Wed")
 	 		expect(mytask.update_date).not_to eq(mytask.creation_date)
@@ -85,7 +86,7 @@ end
 describe ToDoList do
 
 	before :each do
-		@task =  Task.new("Walk the dog") 
+		@task =  Task.new("Walk the dog")
 		@mylist = ToDoList.new("Max")
 	end
 
@@ -107,9 +108,9 @@ describe ToDoList do
 
 	describe "find_task_by_id" do
 		it "find_task_by_id return the content for id" do
-			 # @newtask = Task.new("Walk the dog") 
+			 # @newtask = Task.new("Walk the dog")
 			@mylist.add_task(@task)
-			
+
 			expect(@mylist.find_task_by_id(@task.id)).to equal(@task)
 			expect(@mylist.find_task_by_id(@task.id)).not_to eq(nil)
 
@@ -119,7 +120,7 @@ describe ToDoList do
 
 	describe "find_task_by_id no exist id" do
 		it "find_task_by_id return the content for id" do
-			 # @newtask = Task.new("Walk the dog") 
+			 # @newtask = Task.new("Walk the dog")
 			gosttaks = Task.new ""
 			@mylist.add_task(gosttaks)
 			expect(@mylist.find_task_by_id(gosttaks)).to eq(nil)
@@ -130,7 +131,7 @@ describe ToDoList do
 		it "sort the task by creation date" do
 			@task1 =  Task.new("Un")
 			@task2 =  Task.new("Deux")
-			@task3 =  Task.new("Trois") 
+			@task3 =  Task.new("Trois")
 			@mylist.add_task(@task2)
 			@mylist.add_task(@task3)
 			@mylist.add_task(@task1)
@@ -156,11 +157,3 @@ describe ToDoList do
 
 
 end
-
-
-
-
-
-
-
-

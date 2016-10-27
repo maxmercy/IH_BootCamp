@@ -1,13 +1,15 @@
 ######### Class for post and sponsorded post ########
 ######### with print mthd for display post   ########
 class Post
-  attr_accessor  :title, :date, :content_post
-   def initialize(title, date, text)
+  attr_accessor  :title, :date, :content_post, :author, :category
+   def initialize(title, date, text, author, category)
      @title = title
      @date = date
      @content_post = text
-   end
-
+     @author = author
+     @category = category
+       
+    end
 
 
    # def print

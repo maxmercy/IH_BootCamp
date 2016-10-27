@@ -32,10 +32,10 @@ end
 
 
 
-get "/post_details/?:post_index?" do
+get "/post_details/:post_index" do
 
-	@post_index = params[:post_index]
-	@post_selected = myblog.posts[@post_index.to_i]
+	@post_index = params[:post_index].to_i
+	@post_selected = myblog.posts[@post_index]
 
 	erb(:post)
 end
@@ -55,7 +55,7 @@ end
 
 post "/posted" do
 	# binding.pry
-  post = Post.new(params[:post_title],  Time.now  ,params[:post_text])
+  post = Post.new(params[:post_title],  Time.now  ,params[:post_text], params[:post_author], params[:post_category])
 
   myblog.add_post(post)
   # Receive the form submission

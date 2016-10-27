@@ -7,10 +7,13 @@
 
 
 <h1> <%= @post_selected.title %> </h1>
+<p><em>  Publish by <%= @post_selected.author %>  at <%= @post_selected.date %> </em> </p>
 
-<em> <%= @post_selected.date %> </em>
+<p> <%=  @post_selected.content_post %> 
+<br>  <br> <br> 
+ Category: <%= @post_selected.category %>
 
-<p> <%=  @post_selected.content_post %> </p>
+</p>
 
 
 <a href="../blog">Blog's Home</a>

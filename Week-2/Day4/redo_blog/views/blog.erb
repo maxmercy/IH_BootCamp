@@ -13,7 +13,11 @@
 <h3>Articles:
 <ul>
 <% @posts.each_index do |index| %>
-	<li> <a href="./post_details/<%=index%>" > <%=  @posts[index].title %></a>
+	<li> <a href="./post_details/<%=index%>" > 
+	<%=  @posts[index].title %></a>, <%= @posts[index].author %>, (<%= @posts[index].category%>)
+
+
+
 	</li>
 <% end %>
 </ul>

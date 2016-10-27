@@ -3,8 +3,8 @@
 
 RSpec.describe "My post" do 
 	before(:each) do
-		@post = Post.new("Test Title", Time.new(2008,6,21, 13,30,0, "+09:00") , "Ceci est post vieux")
-		@post2 = Post.new("Test Title2", Time.new(20010,6,21, 13,30,0, "+09:00") , "Ceci est post recent ")
+		@post = Post.new("Test Title", Time.new(2008,6,21, 13,30,0, "+09:00") , "Test", "maxime","Cooking")
+		@post2 = Post.new("Test Title2", Time.new(20010,6,21, 13,30,0, "+09:00") , "Test", "marc","travel")
 	end
 
 
@@ -17,11 +17,24 @@ RSpec.describe "My post" do
 		expect(@post.date.class).to eq(Time)	
 	end		
 
-	it ("Post content should be a string") do 
-		expect(@post.content_post).to eq("Ceci est post vieux")
-		expect(@post2.content_post).to eq("Ceci est post recent ")
+	it ("category should be accessible") do 
+		post = Post.new("title",Time.now,"content","author","category")
+		expect(post.content_post).to eq("content")	
+		expect(@post2.content_post).to eq("Test")	
+
+	end	
+
+	it ("author should be accessible") do 
+		post = Post.new("title",Time.now,"content","author","category")
+		expect(post.author).to eq("author")	
 	end		
 
+	it ("category should be accessible") do 
+		post = Post.new("title",Time.now,"content","author","category")
+		expect(post.category).to eq("category")	
+		expect(@post2.category).to eq("travel")	
+
+	end	
 
 end
 

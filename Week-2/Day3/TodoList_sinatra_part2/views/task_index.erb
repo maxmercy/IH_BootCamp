@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task List</title>
+</head>
+<body>
+
+<h1> List of Uncompleted Tasks </h1>
+
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li><h2><em><%= task.content %></em></h2> added the <%= task.created_at.iso8601  %></li>
+  <% end %>
+</ul>
+
+<a  href="./new_task">Add a new task</a>
+
+
+
+
+</body>
+</html>

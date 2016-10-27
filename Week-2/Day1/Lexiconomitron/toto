@@ -1,0 +1,1000 @@
+ 1096  lt
+ 1097  clear
+ 1098  lt
+ 1099  clear
+ 1100  lt
+ 1101  mkdir Day1
+ 1102  mv * Day1/
+ 1103  ls
+ 1104  mkdir Day2
+ 1105  cd Day2
+ 1106  clear
+ 1107  lt
+ 1108  ly
+ 1109  lt
+ 1110  mkdir sinatra_exo
+ 1111  cd sinatra_exo/
+ 1112  l
+ 1113  cp ../../Day1/sinatra/
+ 1114  bundle
+ 1115  bundle init
+ 1116  vi Gemfile 
+ 1117  bundle
+ 1118  clear
+ 1119  lt
+ 1120  ls
+ 1121  clear
+ 1122  lt
+ 1123  subl app.rb
+ 1124  ruby 
+ 1125  gem list
+ 1126  4
+ 1127  lt
+ 1128  vi Gemfile.lock 
+ 1129  ruby app.rb 
+ 1130  lt
+ 1131  vi Gemfile
+ 1132  clear
+ 1133  lt
+ 1134  ruby app.rb 
+ 1135  lt
+ 1136  vi Gemfile
+ 1137  cd
+ 1138  cd Ironhack/
+ 1139  lt
+ 1140  cd Pre-Work/
+ 1141  lt
+ 1142  cd HTLM_CSS/
+ 1143  lt
+ 1144  clear
+ 1145  lt
+ 1146  vi blog.css 
+ 1147  subl blog.css 
+ 1148  lt
+ 1149  bi about_me.html 
+ 1150  vi about_me.html 
+ 1151  subl about_me.html 
+ 1152  ls
+ 1153  vi index.html 
+ 1154  lt
+ 1155  mkdir views
+ 1156  cd views/
+ 1157  lt
+ 1158  cd ..
+ 1159  subl sinatra_exo/
+ 1160  lt
+ 1161  cd S
+ 1162  lt
+ 1163  mv chocolate.fav favicon.png
+ 1164  lt
+ 1165  cd sinatra_exo/
+ 1166  lt
+ 1167  mv ../favicon.png .
+ 1168  lt
+ 1169  mv favicon.png favicon.ico
+ 1170  lt
+ 1171  mkdir public
+ 1172  mv favicon.ico public/
+ 1173  ll
+ 1174  cd public/
+ 1175  lt
+ 1176  mv Capture\ du\ 2016-10-25\ 11-24-02.png  kitten.png
+ 1177  lt
+ 1178  mkdir img
+ 1179  mv kitten.png 
+ 1180  mv kitten.png  img/
+ 1181  lt
+ 1182  cear
+ 1183  lt
+ 1184  cd ..
+ 1185  lt
+ 1186  mv views/mycss.css  public/
+ 1187  clear
+ 1188  lt
+ 1189  mv views/mycss.css public/
+ 1190  mv views/mycss.css public/ -f
+ 1191  ls
+ 1192  lt
+ 1193  cd views/
+ 1194  lt
+ 1195  mv hello.erb  about.erb
+ 1196  lt
+ 1197  vi profile.erb
+ 1198  clear
+ 1199  lt
+ 1200  c
+ 1201  lt -a
+ 1202  vi Gemfile
+ 1203  bundle install
+ 1204  clear
+ 1205  lt
+ 1206  t
+ 1207  lt
+ 1208  ruby app.rb 
+ 1209  lt
+ 1210  cd views/
+ 1211  lt
+ 1212  vi profile.erb
+ 1213  subl profile.erb 
+ 1214  cd ..
+ 1215  lt
+ 1216  ruby app.rb 
+ 1217  lt
+ 1218  ruby app.rb 
+ 1219  lt
+ 1220  cd views/
+ 1221  lt
+ 1222  cd ..
+ 1223  lt
+ 1224  cd views/
+ 1225  vi *
+ 1226  clear
+ 1227  lt -a
+ 1228  rm .profile.erb.swp 
+ 1229  clear
+ 1230  lt
+ 1231  cd ..
+ 1232  subl sinatra_exo/
+ 1233  mkdir ASCII_art
+ 1234  cd ASCII_art/
+ 1235  lt
+ 1236  cp ../sinatra_exo/Gemfile .
+ 1237  lt
+ 1238  bundle insta
+ 1239  bundle 
+ 1240  lt
+ 1241  clear
+ 1242  lt
+ 1243  ls
+ 1244  clear
+ 1245  lt
+ 1246  mkdir view
+ 1247  mkdir public
+ 1248  cp ../sinatra_exo/app.rb .
+ 1249  lt
+ 1250  clear
+ 1251  lt
+ 1252  subl ../ASCII_art/
+ 1253  subl ../ASCII_art/ ../sinatra_exo/
+ 1254  ruby app.rb 
+ 1255  vi Gemfile
+ 1256  lt
+ 1257  cd view/
+ 1258  lt
+ 1259  mv wordascii wordascii.erb
+ 1260  ltc
+ 1261  lt
+ 1262  lt -a
+ 1263  rm .Gemfile.swp 
+ 1264  vi Gemfile
+ 1265  bundle
+ 1266  vi Gemfile
+ 1267  kt
+ 1268  lt
+ 1269  cd view/
+ 1270  subl wordascii
+ 1271  cd ..
+ 1272  ruby app.rb 
+ 1273  uby app.rb 
+ 1274  ruby app.rb 
+ 1275  lt
+ 1276  cd view/
+ 1277  cd ..
+ 1278  mv view/ views
+ 1279  vi server.rb
+ 1280  cd views/
+ 1281  touch add.erb
+ 1282  cd ..
+ 1283  lt
+ 1284  cd ..
+ 1285  lt
+ 1286  cd sinatra_exo/
+ 1287  lt
+ 1288  vi home.erb 
+ 1289  vi Gemfile
+ 1290  ls
+ 1291  vi *
+ 1292  cd views/
+ 1293  lt
+ 1294  touch index.erb
+ 1295  touch sous.erb
+ 1296  touch mult.erb
+ 1297  touch div.erb
+ 1298  touch result.erb
+ 1299  rm result.erb 
+ 1300  lt
+ 1301  mkdir lib
+ 1302  cd lib/
+ 1303  lt
+ 1304  calculator.rb
+ 1305  touch calculator.rb
+ 1306  cd ..
+ 1307  lt
+ 1308  cd ..
+ 1309  lt
+ 1310  cd Day1
+ 1311  lt
+ 1312  cd Lexiconomitron/
+ 1313  lt
+ 1314  cd spec/
+ 1315  lt
+ 1316  cd ..
+ 1317  lt
+ 1318  cd sinatra/
+ 1319  lt
+ 1320  vi sinatra_todo.rb 
+ 1321  subl sinatra_todo.rb 
+ 1322  lt
+ 1323  cd views/
+ 1324  subl otter.erb
+ 1325  clear
+ 1326  lt
+ 1327  clear
+ 1328  lt
+ 1329  ll
+ 1330  cd ..
+ 1331  lt
+ 1332  clear
+ 1333  lt
+ 1334  cd ..
+ 1335  lt
+ 1336  clear
+ 1337  lt
+ 1338  mdkir online-calculator
+ 1339  clear
+ 1340  lt
+ 1341  ll
+ 1342  mdkir online-calculator
+ 1343  mkdir online-calculator
+ 1344  cd online-calculator/
+ 1345  lt
+ 1346  clear
+ 1347  lt
+ 1348  cp ../sinatra_exo/Gemfile .
+ 1349  lt
+ 1350  mkdir public
+ 1351  mkdir views
+ 1352  clear
+ 1353  lt
+ 1354  vi Gemfile 
+ 1355  ll
+ 1356  clear
+ 1357  lt
+ 1358  bundle
+ 1359  clear
+ 1360  lt
+ 1361  gem install sinatra
+ 1362  cd ..
+ 1363  subl online-calculator/
+ 1364  cd ..
+ 1365  subl Day2
+ 1366  cd Day2/
+ 1367  lt
+ 1368  subl *
+ 1369  lt
+ 1370  cd online-calculator/
+ 1371  lt
+ 1372  ruby server.rb 
+ 1373  clear
+ 1374  lt
+ 1375  ruby server.rb 
+ 1376  $
+ 1377  clear
+ 1378  lt
+ 1379  clear
+ 1380  ruby server.rb 
+ 1381  clear
+ 1382  lt
+ 1383  ruby server.rb 
+ 1384  lt
+ 1385  cd public/
+ 1386  lt
+ 1387  cd ..
+ 1388  lt
+ 1389  ls
+ 1390  cd lib/
+ 1391  l
+ 1392  ll
+ 1393  cd ..
+ 1394  cd views/
+ 1395  ls
+ 1396  cd ..
+ 1397  ls
+ 1398  clear
+ 1399  lt
+ 1400  cd lib
+ 1401  lt
+ 1402  touch save_load.rb
+ 1403  cd ..
+ 1404  tl
+ 1405  lt
+ 1406  cd ..
+ 1407  lt
+ 1408  cd online-calculator/
+ 1409  lt
+ 1410  clear
+ 1411  lt
+ 1412  cd views/
+ 1413  lt
+ 1414  subl result.erb
+ 1415  subl result.erb 
+ 1416  clear
+ 1417  lt
+ 1418  ll
+ 1419  cd It
+ 1420  cd Ironhack/
+ 1421  lt
+ 1422  cd IronHack_Bootcamp/
+ 1423  lt
+ 1424  cd Week-2/
+ 1425  lt
+ 1426  cd Day2
+ 1427  lt
+ 1428  clear
+ 1429  lt
+ 1430  cd i
+ 1431  l
+ 1432  cd online-calculator/
+ 1433  lt
+ 1434  clea
+ 1435  lt
+ 1436  subl ../online-calculator/
+ 1437  ruby  server.rb 
+ 1438  ruby  server.rb
+ 1439  clear
+ 1440  tl
+ 1441  ruby  server.rb
+ 1442  uby  server.rb
+ 1443  ruby  server.rb
+ 1444  uby  server.rb
+ 1445  ruby  server.rb
+ 1446  lt
+ 1447  ruby server.rb 
+ 1448  clear
+ 1449  lt
+ 1450  ruby server.rb 
+ 1451  ls -a
+ 1452  ruby server.rb 
+ 1453  ::
+ 1454  lt
+ 1455  rm -r -f 
+ 1456  ls
+ 1457  rm -r -f *
+ 1458  ls
+ 1459  clear
+ 1460  lt
+ 1461  git@github.com:maximiliangiers/20161025_online_calculator.git
+ 1462  git clone 
+ 1463  git clone git@github.com:maximiliangiers/20161025_online_calculator.git
+ 1464  lt
+ 1465  cd 20161025_online_calculator/
+ 1466  lt
+ 1467  ruby server.rb 
+ 1468  lt
+ 1469  clear
+ 1470  lt
+ 1471  clear
+ 1472  lt
+ 1473  vi Gemfile
+ 1474  clear
+ 1475  lt
+ 1476  cd views/
+ 1477  lt
+ 1478  cd ..
+ 1479  lt
+ 1480  cd public/
+ 1481  lt
+ 1482  rm calculator.css 
+ 1483  cd ..
+ 1484  lt
+ 1485  rm -r -f *
+ 1486  clear
+ 1487  lt
+ 1488  ll
+ 1489  lt
+ 1490  ls
+ 1491  cd ..
+ 1492  rmdir 20161025_online_calculator/
+ 1493  cd 20161025_online_calculator/
+ 1494  ll
+ 1495  rm -r -f *
+ 1496  cd ..
+ 1497  lt
+ 1498  rm 20161025_online_calculator/
+ 1499  y
+ 1500  rmdir  20161025_online_calculator/
+ 1501  rm -r -f *
+ 1502  ls
+ 1503  ll
+ 1504  clear
+ 1505  lt
+ 1506  git clone git@github.com:maximiliangiers/20161025_online_calculator.git
+ 1507  clear
+ 1508  lt
+ 1509  cd 20161025_online_calculator/
+ 1510  lt
+ 1511  ls -a
+ 1512  rm -r -f .git/
+ 1513  ls
+ 1514  ls -a
+ 1515  cd ..
+ 1516  lt
+ 1517  cp ../Gemfile .
+ 1518  mv 20161025_online_calculator/Gemfile .
+ 1519  ll
+ 1520  bundle Gemfile 
+ 1521  lt
+ 1522  bundle
+ 1523  clear
+ 1524  lt
+ 1525  ll
+ 1526  subl 20161025_online_calculator/ 
+ 1527  clear
+ 1528  lt
+ 1529  cd ..
+ 1530  lt
+ 1531  mv online-calculator/20161025_online_calculator/ 20161025_online_calculator/
+ 1532  lt
+ 1533  cd online-calculator/
+ 1534  lt
+ 1535  cd ..
+ 1536  lt
+ 1537  subl online-calculator/ 20161025_online_calculator/
+ 1538  lt
+ 1539  cd online-calculator/
+ 1540  lt
+ 1541  mkdir public
+ 1542  mkdir view
+ 1543  mkdir lib
+ 1544  cd lib/
+ 1545  touch calculator.rb
+ 1546  touch filesaver.rb
+ 1547  clear
+ 1548  lt
+ 1549  vi calculator.rb filesaver.rb 
+ 1550  clear
+ 1551  lt
+ 1552  cd ..
+ 1553  lt
+ 1554  clear
+ 1555  lt
+ 1556  cd public/
+ 1557  lt
+ 1558  cd ..
+ 1559  lt
+ 1560  touch server.rb
+ 1561  cd view/
+ 1562  lt
+ 1563  touch index.erb
+ 1564  touch result.erb
+ 1565  cd ..
+ 1566  lt
+ 1567  clear
+ 1568  lt
+ 1569  cd view/
+ 1570  ls
+ 1571  cd ..
+ 1572  lt
+ 1573  clear
+ 1574  lt
+ 1575  clear
+ 1576  lt
+ 1577  ruby server.rb 
+ 1578  lt
+ 1579  cd ..
+ 1580  lt
+ 1581  rm -r -f 20161025_online_calculator/
+ 1582  ckear
+ 1583  clear
+ 1584  lt
+ 1585  ll
+ 1586  cd online-calculator/
+ 1587  lt
+ 1588  ruby server.rb 
+ 1589  mv view/ views
+ 1590  v view/ views
+ 1591  ruby server.rb 
+ 1592  *
+ 1593  l,
+ 1594  cd Ironhack/
+ 1595  lt
+ 1596  cd IronHack_Bootcamp/
+ 1597  lt
+ 1598  cd Week-2/
+ 1599  lt
+ 1600  cd Day2/
+ 1601  l
+ 1602  lt
+ 1603  cd ..
+ 1604  mkdir Day3
+ 1605  lt
+ 1606  cd Day
+ 1607  lt
+ 1608  cd Day3/
+ 1609  lt
+ 1610  clear*lt
+ 1611  clear
+ 1612  lt
+ 1613  subl
+ 1614  lt
+ 1615  ccd ..
+ 1616  cd ..
+ 1617  cd Day3
+ 1618  lt
+ 1619  clear
+ 1620  lt
+ 1621  cd ..
+ 1622  subl Day3
+ 1623  cd ..
+ 1624  lt
+ 1625  cd ..
+ 1626  cd IronHack_Bootcamp/
+ 1627  lt
+ 1628  cd Week-2/
+ 1629  lt
+ 1630  cd Day1
+ 1631  lt
+ 1632  cd sinatra/
+ 1633  tl
+ 1634  lt
+ 1635  ruby s
+ 1636  ruby sinatra_todo.rb 
+ 1637  subl  sinatra_todo.rb 
+ 1638  ruby sinatra_todo.rb 
+ 1639  clear
+ 1640  lt
+ 1641  cd public/
+ 1642  lt
+ 1643  vi task.yml 
+ 1644  cd sp
+ 1645  cd ..
+ 1646  cd spec/
+ 1647  lt
+ 1648  vi sinatra_todo_spec.rb 
+ 1649  clear
+ 1650  lt
+ 1651  cd .....
+ 1652  cd ..
+ 1653  lt
+ 1654  cd ..
+ 1655  lt
+ 1656  cd ..
+ 1657  lt
+ 1658  cd Day3/
+ 1659  lt
+ 1660  clear
+ 1661  lt
+ 1662  clear
+ 1663  lt
+ 1664  cd ..
+ 1665  cd Day2/
+ 1666  lt
+ 1667  clear
+ 1668  lt
+ 1669  cd in
+ 1670  l
+ 1671  cd online-calculator/
+ 1672  lt
+ 1673  ruby server.rb 
+ 1674  lt
+ 1675  clear
+ 1676  lt
+ 1677  subl ../online-calculator/
+ 1678  7
+ 1679  ruby server.rb 
+ 1680  clear
+ 1681  ruby server.rb 
+ 1682  lt
+ 1683  cd ..
+ 1684  lt
+ 1685  git status
+ 1686  git add 
+ 1687  git add @buton_memo
+ 1688  git ad .
+ 1689  git add .
+ 1690  git status
+ 1691  git add ../Day1/
+ 1692  clear
+ 1693  ll
+ 1694  lt
+ 1695  git status
+ 1696  cd ..
+ 1697  lt
+ 1698  git status
+ 1699  ls
+ 1700  ll
+ 1701  cd Day1/
+ 1702  lt
+ 1703  cd ..
+ 1704  lt
+ 1705  klt
+ 1706  lt *
+ 1707  git status
+ 1708  Lexiconomitron/.rspec
+ 1709  vi toto
+ 1710  chmod +x toto
+ 1711  .toto
+ 1712  . .toto
+ 1713  . toto
+ 1714  clear
+ 1715  lt
+ 1716  rm toto
+ 1717  git status
+ 1718  git commit -m "calculator sinatra working
+ 1719  -save value and bring it back if request
+ 1720  -have to fixe the appearance of the request button
+ 1721  -have to build the CSS
+ 1722  "
+ 1723  clear
+ 1724  ll
+ 1725  git push
+ 1726  clear
+ 1727  lt
+ 1728  ll
+ 1729  cd Day2/
+ 1730  lt
+ 1731  cd online-calculator/
+ 1732  lt
+ 1733  ruby server.rb 
+ 1734  clea
+ 1735  rlt
+ 1736  ll
+ 1737  shutdown localhost
+ 1738  clear
+ 1739  lt
+ 1740  ls
+ 1741  clear
+ 1742  lt
+ 1743  dfpdf
+ 1744  cd ..
+ 1745  lt
+ 1746  cd ..
+ 1747  lt
+ 1748  cd Day1
+ 1749  ll
+ 1750  cd sinatra/
+ 1751  lt
+ 1752  vi sinatra_todo.rb 
+ 1753  subl sinatra_todo.rb 
+ 1754  cd ..
+ 1755  subl  sinatra/
+ 1756  mv sinatra/ todolist_sinatra_part1
+ 1757  subl  todolist_sinatra_part1/
+ 1758  k
+ 1759  t
+ 1760  ls
+ 1761  ll
+ 1762  cd todolist_sinatra_part1/
+ 1763  lt
+ 1764  clear
+ 1765  lt
+ 1766  cd so
+ 1767  cd spec/
+ 1768  lt
+ 1769  cd ..
+ 1770  rspec
+ 1771  clear
+ 1772  lt
+ 1773  sl
+ 1774  ls
+ 1775  clear
+ 1776  lt
+ 1777  clear
+ 1778  lt
+ 1779  git status
+ 1780  git add .
+ 1781  git status
+ 1782  git stalt
+ 1783  lt
+ 1784  git status
+ 1785  vi toto
+ 1786  . toto
+ 1787  git status
+ 1788  git rm toto 
+ 1789  l
+ 1790  ls
+ 1791  rm toto
+ 1792  git status
+ 1793  cear
+ 1794  clear
+ 1795  tl
+ 1796  cd ..
+ 1797  lt
+ 1798  cd ..
+ 1799  cd Day3
+ 1800  lt
+ 1801  clea
+ 1802  lt
+ 1803  clear
+ 1804  lt
+ 1805  clear
+ 1806  lt
+ 1807  cd ..
+ 1808  cd Day2/
+ 1809  lt
+ 1810  subl online-calculator/
+ 1811  top
+ 1812  clear
+ 1813  lt
+ 1814  cd ..
+ 1815  cd Day3/
+ 1816  cp ../Day2/online-calculator/ .
+ 1817  lt
+ 1818  ls
+ 1819  cp ../Day2/online-calculator/ online-calculator-bis
+ 1820  lt
+ 1821  cp -r  ../Day2/online-calculator/ online-calculator-bis
+ 1822  lt
+ 1823  clea
+ 1824  lt
+ 1825  cd online-calculator-bis/
+ 1826  lt
+ 1827  clear
+ 1828  lt
+ 1829  cd lib/
+ 1830  tl
+ 1831  lt
+ 1832  touch worldtime.rb
+ 1833  clear
+ 1834  lt
+ 1835  cd ..
+ 1836  lt
+ 1837  mkdir user-session
+ 1838  cd user-session/
+ 1839  lt
+ 1840  ll
+ 1841  touch server.rb
+ 1842  subl  server.rb 
+ 1843  lt
+ 1844  cp ../online-calculator-bis/Gemfile .
+ 1845  lt
+ 1846  bundle
+ 1847  clear
+ 1848  lt
+ 1849  mkdir lib
+ 1850  cd lib/
+ 1851  touch user.rb
+ 1852  cd ..
+ 1853  lt
+ 1854  subl  ../user-session/
+ 1855  clear
+ 1856  lt
+ 1857  mkdir views
+ 1858  cd views/
+ 1859  touch login.erb
+ 1860  cd ..
+ 1861  lt
+ 1862  ruby server.rb 
+ 1863  lt
+ 1864  clear
+ 1865  lt
+ 1866  clear
+ 1867  lt
+ 1868  cd views/
+ 1869  lt
+ 1870  touch private-space.erb
+ 1871  touch login-error.erb
+ 1872  ruby server.rb 
+ 1873  cd ..
+ 1874  ruby server.rb 
+ 1875  lt
+ 1876  ruby server.rb 
+ 1877  mm
+ 1878  ll
+ 1879  cd views/
+ 1880  lt
+ 1881  mv private-space.erb  privatespace.erb 
+ 1882  mv login-error.erb  loginerror.erb 
+ 1883  clear
+ 1884  lt
+ 1885  ruby server.rb 
+ 1886  cd ..
+ 1887  ruby server.rb 
+ 1888  c
+ 1889  lear
+ 1890  kt
+ 1891  *
+ 1892  lt
+ 1893  clear
+ 1894  lt
+ 1895  cd lib
+ 1896  lt
+ 1897  cd ..
+ 1898  lt
+ 1899  cd online-calculator-bis/
+ 1900  lt
+ 1901  vi server.rb 
+ 1902  cd ..
+ 1903  lt
+ 1904  clear
+ 1905  lt
+ 1906  git status
+ 1907  git add *
+ 1908  git status
+ 1909  git commit -m "login-sinatra-session exo
+ 1910  "
+ 1911  clear
+ 1912  lt
+ 1913  cd ..
+ 1914  lt
+ 1915  cd Day3/
+ 1916  lt
+ 1917  clear
+ 1918  lt
+ 1919  subl toto
+ 1920  firefox
+ 1921  lt
+ 1922  chrome
+ 1923  subl 
+ 1924  vi .bashrc
+ 1925  touch toto
+ 1926  rm toto
+ 1927  ll
+ 1928  cd TOTO
+ 1929  ls
+ 1930  cd toto/
+ 1931  rm *
+ 1932  vi .bashrc
+ 1933  lt
+ 1934  cd ih-more-important-program/
+ 1935  lt
+ 1936  cd 
+ 1937  clear
+ 1938  lt
+ 1939  cd /
+ 1940  lt
+ 1941  cd /os
+ 1942  cd /
+ 1943  ls
+ 1944  ll
+ 1945  cd
+ 1946  vi .bashrc
+ 1947  . .bashrc 
+ 1948  cd windoc
+ 1949  windoc
+ 1950  ls
+ 1951  clear
+ 1952  lt
+ 1953  vi toto.task
+ 1954  chmod +x toto.task 
+ 1955  lt
+ 1956  . toto.task 
+ 1957  lt
+ 1958  chmod -x script Gemfile 
+ 1959  ls
+ 1960  clear
+ 1961  lt
+ 1962  rm toto.task script Gemfile 
+ 1963  y
+ 1964  clear
+ 1965  tl
+ 1966  lt
+ 1967  cd 
+ 1968  cd I
+ 1969  cd 
+ 1970  lt
+ 1971  led
+ 1972  vlrzt
+ 1973  ly
+ 1974  cd Ironhack/
+ 1975  lt
+ 1976  cd IronHack_Bootcamp/
+ 1977  l
+ 1978  cd Week-2/
+ 1979  lt
+ 1980  cd Day
+ 1981  lt
+ 1982  cd Day1/
+ 1983  lt
+ 1984  ls *
+ 1985  cd todolist_sinatra_part1/
+ 1986  cd spec/
+ 1987  lt
+ 1988  vi sinatra_todo_spec.rb 
+ 1989  subl  sinatra_todo_spec.rb 
+ 1990  ll
+ 1991  vi sinatra_todo_spec.rb 
+ 1992  cd ..
+ 1993  lt
+ 1994  vi sinatra_todo.rb 
+ 1995  cd 
+ 1996  lt
+ 1997  clear
+ 1998  lt
+ 1999  exit
+ 2000  lt
+ 2001  cd I
+ 2002  t
+ 2003  cd Ironhack/
+ 2004  lt
+ 2005  cd IronHack_Bootcamp/
+ 2006  lt
+ 2007  clear
+ 2008  lt
+ 2009  cd Week-2/
+ 2010  lt
+ 2011  clear
+ 2012  lt
+ 2013  cd Day1/
+ 2014  lt
+ 2015  cd Lexiconomitron/
+ 2016  lt
+ 2017  cd spec/
+ 2018  lt
+ 2019  vi lexiconomitron_spec.rb 
+ 2020  ls
+ 2021  cd ..
+ 2022  lt
+ 2023  rspec lexiconomitron.rb 
+ 2024  cd ..
+ 2025  lt
+ 2026  cd todolist_sinatra_part1/
+ 2027  lt
+ 2028  rspec s
+ 2029  rspec sinatra_todo.rb 
+ 2030  cd spec/
+ 2031  lt
+ 2032  rspec sinatra_todo_spec.rb 
+ 2033  clear
+ 2034  lt
+ 2035  gem install rspec
+ 2036  rspec sinatra_todo_spec.rb 
+ 2037  clear
+ 2038  lt
+ 2039  cd ..
+ 2040  lt
+ 2041  rspec 
+ 2042  clear
+ 2043  lt
+ 2044  cd ..
+ 2045  lt
+ 2046  clear
+ 2047  lt
+ 2048  cd rspec-fizzbuzz/
+ 2049  lt
+ 2050  rspec  FizzBuzz.rb 
+ 2051  rspec 
+ 2052  clear
+ 2053  lt
+ 2054  vi FizzBuzz.rb 
+ 2055  clear
+ 2056  lt
+ 2057  rspec FizzBuzz.rb 
+ 2058  cd spec/
+ 2059  rspec FizzBuzz_spec.rb 
+ 2060  cd ..
+ 2061  lt
+ 2062  clear
+ 2063  lt
+ 2064  cd ..
+ 2065  lt
+ 2066  clea
+ 2067  rlt
+ 2068  cd ..
+ 2069  cd Day2
+ 2070  lg
+ 2071  lt
+ 2072  cd sinatra_exo/
+ 2073  lt
+ 2074  cd ..
+ 2075  cd Day1/
+ 2076  kt*lt
+ 2077  **t
+ 2078  *
+ 2079  lt
+ 2080  clea
+ 2081  lt
+ 2082  cd Lexiconomitron/
+ 2083  lt
+ 2084  rspec lexiconomitron.rb 
+ 2085  cd spec/
+ 2086  lt
+ 2087  vi lexiconomitron_spec.rb 
+ 2088  clear
+ 2089  lt
+ 2090  cd ..
+ 2091  lt
+ 2092  rspec  lexiconomitron.rb 
+ 2093  history
+ 2094* 
+ 2095  history >toto

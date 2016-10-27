@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>My blog</title>
+</head>
+<body>
+
+<h1>Hello, My Super Blog de <em>la Muerte !!! </em></h1>
+
+ <h4> <a href="./new_post">Publish a new post here</a> </h4>
+
+
+<h3>Articles:
+<ul>
+<% @posts.each_index do |index| %>
+	<li> <a href="./post_details/<%=index%>" > <%=  @posts[index].title %></a>
+	</li>
+<% end %>
+</ul>
+</h3>
+
+
+</body>
+</html>

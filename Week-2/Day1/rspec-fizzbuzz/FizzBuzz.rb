@@ -1,4 +1,3 @@
-binding.pry
 
 class FizzBuzz
 	def initialize 
@@ -33,7 +32,6 @@ class FizzBuzz
 
 
 	   		@result_array.each_index do |i|
-	   			bindin.pry
 	   			if i.to_s[0] == "1" 
 	   				@result_array[i+1] = "Bang"
 	   					

@@ -14,7 +14,7 @@ end
 post "/login" do
 	if params[:username] == 'max' && params[:password] == "toto"
 		session[:username] =  params[:username]
-		redirect to ("/private-space-#{session[:username]}")
+		redirect to ("/private-space")
 
 	else
 		redirect to ("/login-error")
@@ -23,7 +23,7 @@ post "/login" do
 end
 
 
-get "/private-space-?:session[:username]?" do
+get "/private-space" do
 	if session[:username] != nil
 		erb(:privatespace)
 	else

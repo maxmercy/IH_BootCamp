@@ -14,7 +14,7 @@ class Cheeseboard
 	end
 
 	def create_board
-		8.times do @board << [nil,nil,nil,nil,nil,nil,nil,nil]		
+		8.times do @board << [nil,nil,nil,nil,nil,nil,nil,nil]
 		end
 
 
@@ -43,19 +43,19 @@ class Cheeseboard
 		puts "**********************************"
 		@board.each_index do |i|
 			@board[i].each_index do |y|
-				if y == 0 
+				if y == 0
 					print 8 - i
 				end
 
-				if @board[i][y] == nil 
+				if @board[i][y] == nil
 					print "#{@board[i][y]} --"
-				else 
+				else
 					print  " #{@board[i][y].piecename}"
 				end
 
 			end
 			puts "\n"
-		end	
+		end
 		puts "  a  b  c  d  e  f  g  h"
 		puts "\n\n\n\n"
 	end
@@ -81,15 +81,15 @@ class Cheeseboard
 			position_grille = convert_position_to_array(position)
 		else position_grille = position
 		end
-		
+
 		x = position_grille[0]
 		y = position_grille[1]
-		
+
 
 		if @board[x][y] == nil
 			#puts "At the position #{position}, there is nothing"
 			false
-			
+
 		else
 			puts "At the position #{position}, there is a #{@board[x][y].piecename}"
 
@@ -100,7 +100,7 @@ class Cheeseboard
 
 	def checkmove(origin,destination)
 
-		
+
 		p origin
 		p origin_arr = convert_position_to_array(origin)
 		p destination
@@ -111,7 +111,7 @@ class Cheeseboard
 
 		#@piece.valid_move(@myboard,"a1","a6")
 	    p @piece.class
-	  
+
 
   	end
 
@@ -119,7 +119,7 @@ class Cheeseboard
 
 end
 
-class Printer	
+class Printer
 
 
 	self.def print(test)
@@ -180,6 +180,3 @@ wR.valid_move(mycheeseboard, "a1","a4")
 
 
 #mycheeseboard.checkmove("c3","d3")
-
-
-

@@ -1,53 +1,38 @@
 require "sinatra"
 require "sinatra/reloader"
-enable(:sessions)
-require "./lib/user"
+require "./lib/password_validator"
+require "./lib/user_validate"
+require "pry"
+enable :sessions
 
-
-
-get "/" do
-	params[:loginfo] = nil
-	erb(:login)	
+$database = Database.new
+get '/' do
+	
+	erb :home
 end
 
 
-post "/login" do
-	if params[:username] == 'max' && params[:password] == "toto"
-		session[:username] =  params[:username]
-		redirect to ("/private-space")
-
+post '/' do
+	@username = params[:user_name]
+	@password = params[:password]
+	if $database.login?(@username, @password) == true
+		session[:username] = @username
+		session[:password] = @password
+		redirect to("/login")
 	else
-		redirect to ("/login-error")
-	end
+		erb :home
 
+	end
+	
+end
+get "/login" do
+	@user = session[:username]
+	puts @user
+	erb :login
 end
 
-
-get "/private-space" do
-	if session[:username] != nil
-		erb(:privatespace)
-	else
-		erb(:loginerror)
-	end
-
+get '/logout' do
+	session.clear
+	redirect to("/")
 end
-
-post "/unlogin" do
-	if params[:loginfo] = "unlog"
-		session[:username] = nil
-		redirect to ("/")
-	end
-end
-
-
-get "/login-error" do
-	if params[:loginfo] = "retry"
-		
-		redirect to ("/")
-	end
-	erb(:loginerror)
-
-end
-
-
 

@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>login page</title>
-</head>
-<body>
 
-<h1> Login for Maxime Session </h1>
-<form action="/login" method="POST">
-	<input type="text" name="username" placeholder="Username"> 
-	<input type="password" name="password" placeholder="Password">
-
-	<button type="submit" name="loginfo" value="submitted">Add</button>
+<% if @user %>
+<h1>Sucessfully logged In</h1>
+<form action="/logout" method="GET">
+<button type="submit">Logout</button>
 </form>
+<% else %>
+	<h1>You are required to login</h1>
+<% end %>
 
-
- 
-
-</body>
-</html>

@@ -3,33 +3,6 @@ require "themoviedb"
 Tmdb::Api.key("7ff797c2799958357c0a45e8f65f45b2")
 
 
-class MovieQuiz
-	attr_accessor :movie_list
-	def initialize
-
-
-	end
-
-
-	def self.get_list(user_word)
-		@movie_list = MovieList.new.movie_quiz(params[:user_word])
-
-
-	end
-
-
-
-
-
-
-
-
-
-
-end
-
-
-
 class MovieList
 	def initialize
 		@all_movies = []
@@ -62,13 +35,28 @@ class MovieList
 			get_movies(word_user)
 			reduce_movies_list(20)
 			pict_check_movie_list
-			reduce_movies_list(9)
+			reduce_movies_list(6)
 			pict_path_modificator
 			@all_movies
 	end
 
 
 end
+
+
+
+class MoviePicture
+    def path_to_picture(movie)
+      if movie.poster_path != nil
+        path = "https://image.tmdb.org/t/p/w154/#{movie.poster_path}"
+      else path = nil
+      end
+    end
+end
+
+
+
+
 #
 # movie.original_title,
 # movie.release_date

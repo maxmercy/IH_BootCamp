@@ -8,17 +8,20 @@
 
 <p> Here  <%= @movie_list.length %> movies. <br>
   Can you answer this question: <br>
-  <%= @quiz_question %>
+  <%= @question_answer[0] %>
 </p>
 
 
 
- <ul>
-     <% @movie_list.each do |movie| %>exit
-         <li> <%= movie.title %>  <img src="<%=movie.poster_path%>"> </li>
-   <% end %>
-</ul>
+<form action="/check_answer" method="POST">
+   <ul>
+     <% @movie_list.each_with_index do |movie,index| %>
 
+         <% index == @question_answer[1] ? answer = true : answer = false %>
+      <li>  <input type="image" src="<%=movie.poster_path%>"  name="user_answer" value="<%=answer%>"    />  </li>
+    <% end %>
+</ul>
+</form>
 
 
 <!-- <a href="../">Games' Home</a> -->

@@ -1,105 +1,8 @@
 require 'date'
 require 'pry'
-
+require_relative "module.rb"
+require_relative "module_fruits.rb"
  #Trolley is a hash with :item as key => value [quantity,price,discount]
-
-
-
-
-module Apple
-  def apple_cost
-    numb_apple = @trolley.values_at(:apple)[0][0]
-    season_price = @price_table[:apple].values_at(season_check) 
-    full_price =  (numb_apple) * season_price[0]
-    discount_price = (numb_apple / 2) * season_price[0]
-    price = (full_price - discount_price) 
-
-    @trolley[:apple][1] = price 
-    @trolley[:apple][2] = discount_price
-  end
-end
-
-module Orange
-  def orange_cost
-    numb_orange = @trolley.values_at(:orange)[0][0]
-    season_price = @price_table[:orange].values_at(season_check) 
-    full_price = numb_orange * season_price[0]
-    discount_price =  (numb_orange / 3 )* season_price[0]
-    price = full_price - discount_price
-   
-    @trolley[:orange][1] = price 
-    @trolley[:orange][2] = discount_price 
-  end
-end
-
-module Banana
-  def banana_cost 
-    numb_banana = @trolley.values_at(:banana)[0][0]
-    season_price = @price_table[:banana].values_at(season_check) 
-    price = (numb_banana) * season_price[0]
-
-    @trolley[:banana][1] = price 
-  end
-end
-
-module Grapes
-  def grapes_cost
-    numb_grapes  = @trolley.values_at(:grapes)[0][0]
-    season_price = @price_table[:grapes].values_at(season_check) 
-    price = (numb_grapes) * season_price[0]
-
-    @trolley[:grapes][1] = price 
-  end
-end
-
-
-module Watermelon
-  def watermelon_cost
-    numb_watermelon  = @trolley.values_at(:watermelon)[0][0]
-    watermelon_price = @price_table[:watermelon].values_at(season_check)   
-    if Date.today.sunday? 
-        watermelon_price = @price_table[:watermelon].values_at(:sunday) 
-    else 
-        watermelon_price = @price_table[:watermelon].values_at(season_check) 
-    end
-    price = (numb_watermelon) * watermelon_price[0]
-    @trolley[:watermelon][1] = price 
-  end
-end
-
-
-module Time_check
-  #return season = season name
-   def season_check
-      year_day = Date.today.yday().to_i
-      year = Date.today.year.to_i
-      is_leap_year = year % 4 == 0 && year % 100 != 0 || year % 400 == 0
-      if is_leap_year and year_day > 60
-        # if is leap year and date > 28 february 
-        year_day = year_day - 1
-      end
-      if year_day >= 355 or year_day < 81
-        season = :winter
-      elsif year_day >= 81 and year_day < 173
-        season = :spring
-      elsif year_day >= 173 and year_day < 266
-        season = :summer
-      elsif year_day >= 266 and year_day < 355
-       season = :autumn
-      end
-      return season
-    end
-
-    # #if sunday, sunday = true
-    # def sunday_check
-    #   if Date.today.sunday?
-    #     sunday = true
-    #   else
-    #     sunday = false
-    #   end
-    # end
-end
-
 
 class ShoppingCart
   include Apple
@@ -115,12 +18,12 @@ class ShoppingCart
   end
 
   def add_item_to_cart(item)
-    item = item.to_sym 
+    item = item.to_sym
     if @trolley.key?(item) == false
       @trolley[item] = [ +1 , 0 , 0]
     else
-      @trolley[item][0] += 1     
-    end  
+      @trolley[item][0] += 1
+    end
   end
 
 
@@ -150,17 +53,17 @@ class ShoppingCart
   def show_ticket
       puts "In your trolley you have: "
       puts "------------------------ "
-    @trolley.each { |fruit , quantity| 
+    @trolley.each { |fruit , quantity|
       print "#{quantity[0]} #{fruit} : #{quantity[1]+quantity[2]} €"
-      if quantity[2] > 0 
+      if quantity[2] > 0
         print "   special offer: -#{quantity[2]}€\  sous-total: #{quantity[1]} € "
       else
         print "                       sous-total: #{quantity[1]} €"
-      end    
+      end
       puts
     }
    free_items
-    
+
       puts "      Total = #{total_cost} €"
   end
 

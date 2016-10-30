@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Max's Movie Challenge!</title>
+</head>
+<body>
+
+
+<p> Here  <%= @movie_list.length %> movies. <br>
+  Can you answer this question: <br>
+  <%= @quiz_question %>
+</p>
+
+
+
+ <ul>
+     <% @movie_list.each do |movie| %>exit
+         <li> <%= movie.title %>  <img src="<%=movie.poster_path%>"> </li>
+   <% end %>
+</ul>
+
+
+
+<!-- <a href="../">Games' Home</a> -->
+
+
+<a href="/">Return Home</a>
+
+
+</body>
+</html>

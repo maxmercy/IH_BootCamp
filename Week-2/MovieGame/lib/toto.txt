@@ -1,0 +1,90 @@
+@document=
+  #(Document:0x2ada26e1b2e0 {
+    name = "document",
+    children = [
+      #(DTD:0x2ada2957ab38 { name = "html" }),
+      #(Element:0x2ada26e1b27c {
+        name = "html",
+        attributes = [
+          #(Attr:0x2ada2957a7b4 { name = "xmlns:og", value = "http://opengraphprotocol.org/schema/" }),
+          #(Attr:0x2ada2957a7a0 { name = "xmlns:fb", value = "http://www.facebook.com/2008/fbml" })],
+        children = [
+          #(Text "\n"),
+          #(Element:0x2ada2957a048 {
+            name = "head",
+            children = [
+              #(Text "\n"),
+              #(Element:0x2ada29587d88 {
+                name = "meta",
+                attributes = [ #(Attr:0x2ada29587d24 { name = "http-equiv", value = "content-type" }), #(Attr:0x2ada29587d10 { name = "content", value = "text/html; charset=iso-8859-1" })]
+                }),
+              #(Text "\n"),
+              #(Element:0x2ada29587644 {
+                name = "script",
+                attributes = [ #(Attr:0x2ada295875e0 { name = "type", value = "text/javascript" })],
+                children = [ #(CDATA "var IMDbTimer={starttime: new Date().getTime()};")]
+                }),
+              #(Text "\n"),
+              #(Element:0x2ada29586f50 { name = "script", children = [ #(CDATA "(function(t){ (t.events = t.events || {})[\"csm_head_pre_title\"] = new Date().getTime(); })(IMDbTimer);")] }),
+              #(Text "\n"),
+              #(Element:0x2ada29586b18 {
+                name = "script",
+                children = [ #(CDATA "\nvar addClickstreamHeadersToAjax = function(xhr) {\n    xhr.setRequestHeader(\"x-imdb-parent-id\", \"0ZC9HWMFVMSQM93ZS6SE\");\n};\n")]
+                }),
+              #(Text "\n\n"),
+              #(Element:0x2ada295866e0 { name = "title", children = [ #(Text "Titanic (1997)")] }),
+              #(Text "\n"),
+              #(Element:0x2ada295862a8 { name = "script", children = [ #(CDATA "(function(t){ (t.events = t.events || {})[\"csm_head_post_title\"] = new Date().getTime(); })(IMDbTimer);")] }),
+              #(Text "\n"),
+              #(Element:0x2ada29575e44 {
+                name = "link",
+                attributes = [ #(Attr:0x2ada29575de0 { name = "rel", value = "canonical" }), #(Attr:0x2ada29575dcc { name = "href", value = "http://www.imdb.com/title/tt0120338/combined" })]
+                }),
+              #(Element:0x2ada29575750 {
+                name = "meta",
+                attributes = [ #(Attr:0x2ada295756ec { name = "property", value = "og:url" }), #(Attr:0x2ada295756c4 { name = "content", value = "http://www.imdb.com/title/tt0120338/combined" })]
+                }),
+              #(Text "\n\n"),
+              #(Element:0x2ada29574f6c { name = "meta", attributes = [ #(Attr:0x2ada29574f08 { name = "name", value = "title" }), #(Attr:0x2ada29574ef4 { name = "content", value = "Titanic (1997)" })] }),
+              #(Text "\n"),
+              #(Element:0x2ada2957479c {
+                name = "meta",
+                attributes = [
+                  #(Attr:0x2ada29574738 { name = "name", value = "description" }),
+                  #(Attr:0x2ada29574724 {
+                    name = "content",
+                    value = "Directed by James Cameron.  With Leonardo DiCaprio, Kate Winslet, Billy Zane. A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic. Visit IMDb for Photos, Showtimes, Cast, Crew, Reviews, Plot Summary, Comments, Discussions, Taglines, Trailers, Posters, Fan Sites"
+                    })]
+                }),
+              #(Text "\n"),
+              #(Element:0x2ada28eddf78 {
+                name = "link",
+                attributes = [
+                  #(Attr:0x2ada28eddf14 { name = "rel", value = "image_src" }),
+                  #(Attr:0x2ada28eddf00 {
+                    name = "href",
+                    value = "https://images-na.ssl-images-amazon.com/images/M/MV5BZDNiMjE0NDgtZWRhNC00YTlhLTk2ZjItZTQzNTU2NjAzNWNkXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1._SX94_SY140_.jpg"
+                    })]
+                }),
+              #(Element:0x2ada28edd8e8 {
+                name = "meta",
+                attributes = [
+                  #(Attr:0x2ada28edd884 { name = "property", value = "og:image" }),
+                  #(Attr:0x2ada28edd870 {
+                    name = "content",
+                    value = "https://images-na.ssl-images-amazon.com/images/M/MV5BZDNiMjE0NDgtZWRhNC00YTlhLTk2ZjItZTQzNTU2NjAzNWNkXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1._SX94_SY140_.jpg"
+                    })]
+                }),
+              #(Text "\n"),
+              #(Element:0x2ada28edd1a4 {
+                name = "meta",
+                attributes = [
+                  #(Attr:0x2ada28edd140 { name = "name", value = "keywords" }),
+                  #(Attr:0x2ada28edd12c { name = "content", value = "Reviews, Showtimes, DVDs, Photos, Message Boards, User Ratings, Synopsis, Trailers, Credits" })]
+                }),
+              #(Text "\n"),
+              #(Element:0x2ada28edca60 { name = "script", children = [ #(CDATA "(function(t){ (t.events = t.events || {})[\"csm_head_pre_css\"] = new Date().getTime(); })(IMDbTimer);")] }),
+              #(Text "\n"),
+              #(Element:0x2ada28edc628 {
+                name = "link",
+

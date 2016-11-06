@@ -1,0 +1,70 @@
+
+body {
+  background: #feccb1;
+  background: -moz-linear-gradient(top,  #feccb1 0%, #f17432 50%, #ea5507 51%, #fb955e 100%);
+  background: -webkit-linear-gradient(top,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%);
+  background: linear-gradient(to bottom,  #feccb1 0%,#f17432 50%,#ea5507 51%,#fb955e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feccb1', endColorstr='#fb955e',GradientType=0 );
+  height: 1200px;
+}
+
+.container {
+  background-color: LightGoldenrodYellow;
+}
+
+
+
+.content {
+  height: 100px;
+
+  margin: 5px;
+}
+
+.row:nth-child(1) {
+    background: Tan;
+}
+
+.row:nth-child(5) {
+    background: chocolate;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .content {
+    background-color: olive;
+  }
+
+}
+
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .content {
+    background-color: aquamarine;
+  }
+
+  body {
+    background-image: url("https://s-media-cache-ak0.pinimg.com/564x/19/7f/29/197f29ed836da3347bc0b6f910995d1b.jpg");
+    }
+}
+
+@media  screen and (min-width: 768px) and (max-width: 992px) {
+  .content {
+    background-color: darkgrey;
+
+  }
+  body {
+    background-image: url("http://previews.123rf.com/images/saenal78/saenal781503/saenal78150300037/37268674-Seamless-pattern-with-cat-paw-prints-fish-bone-and-hearts-Endless-background-Vector-illustration-Stock-Vector.jpg");
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    background-color: darkblue;
+
+  }
+  body {
+    background-image: url("http://st.depositphotos.com/1828227/1697/v/950/depositphotos_16976263-stock-illustration-cats-among-flowers-seamless-pattern.jpg");
+  }
+}
